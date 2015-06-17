@@ -41,7 +41,9 @@ def _GirvanNewmanGetModularity(G, deg_, m_):
     New_deg = {}
     New_deg = UpdateDeg(New_A, G.nodes())
     #Let's compute the Q
-    comps = nx.connected_components(G)    #list of components    
+    comps = nx.connected_components(G)    #list of components
+    for comp in comps:
+        print (comp)
     print 'no of comp: %d' % nx.number_connected_components(G)
     Mod = 0    #Modularity of a given partitionning
     for c in comps:
